@@ -50,11 +50,12 @@ class Die //models one single dice cube
 		int right = myX + 15;
 		int mid = myX + 25;
 		int left = myX + 35;
-		int top = myX + 15;
+		int top = myY + 15;
 		int bottom = myY + 35;
 		if (numDots == 1){	
 			point(mid,mid);
 		}
+	
 		else if (numDots == 2){
 			point(right,top);
 			point(left,bottom);
@@ -72,15 +73,19 @@ class Die //models one single dice cube
 		}
 		else if (numDots == 5){
 			point(right, top);
+			point(right, bottom);
+			point(mid,mid);
+			point(left, top);
+			point(left, bottom);
+		}
+		else if (numDots == 6){
+			point(right, top);
 			point(right, mid);
 			point(right, bottom);
 			point(left, top);
 			point(left, mid);
 			point(left, bottom);
 		}
-		else {
-			
-		}
-
 	}
 }
+
