@@ -10,9 +10,9 @@ void setup()
 void draw()
 {	background(0,150,0);
 	int sumDots = 0;
-	for(int x = 10; x < 490; x = x + 60){
-		for(int y = 70; y < 460; y = y +60){
-			Die dice = new Die(x,y);
+	for(int j = 1; j <= 6; j++){
+		for(int i = 1; i <= 8; i++){
+			Die dice = new Die(i*60-50,70*j);
 			dice.show();
 			sumDots = sumDots + dice.numDots;
 		}
@@ -41,19 +41,20 @@ class Die //models one single dice cube
 
 	}
 	void show()
-	{
+	{	
 		strokeWeight(5);
 		stroke(255);
 		fill(200,0,0);
 		rect(myX,myY,50,50,100);
 		stroke(0);
 		int right = myX + 15;
-		int mid = myX + 25;
+		int midX = myX + 25;
+		int midY = myY + 25;
 		int left = myX + 35;
 		int top = myY + 15;
 		int bottom = myY + 35;
 		if (numDots == 1){	
-			point(mid,mid);
+			point(midX,midY);
 		}
 	
 		else if (numDots == 2){
@@ -62,7 +63,7 @@ class Die //models one single dice cube
 		}
 		else if (numDots == 3){
 			point(right,top);
-			point(mid,mid);
+			point(midX,midY);
 			point(left, bottom);
 		}
 		else if (numDots == 4){
@@ -74,16 +75,16 @@ class Die //models one single dice cube
 		else if (numDots == 5){
 			point(right, top);
 			point(right, bottom);
-			point(mid,mid);
+			point(midX,midY);
 			point(left, top);
 			point(left, bottom);
 		}
 		else if (numDots == 6){
 			point(right, top);
-			point(right, mid);
+			point(right, midY);
 			point(right, bottom);
 			point(left, top);
-			point(left, mid);
+			point(left, midY);
 			point(left, bottom);
 		}
 	}
