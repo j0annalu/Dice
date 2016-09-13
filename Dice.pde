@@ -8,7 +8,7 @@ void setup()
 }
 
 void draw()
-{	background(0,150,0);
+{	background(0,100,0);
 	int sumDots = 0;
 	for(int j = 1; j <= 6; j++){
 		for(int i = 1; i <= 8; i++){
@@ -42,6 +42,9 @@ class Die //models one single dice cube
 	}
 	void show()
 	{	
+		noStroke();
+		fill(0,140,0);
+		rect(myX-5,myY-5,60,60,100);
 		strokeWeight(5);
 		stroke(255);
 		fill(200,0,0);
